@@ -7,6 +7,8 @@ import { Heading } from "@/shared/ui/heading";
 import { Reveal } from "@/shared/ui/reveal";
 import { Section } from "@/shared/ui/section";
 
+import { sceneCopyClass } from "../lib/scene-copy";
+
 export function Skills() {
   const t = useTranslations("skills");
 
@@ -20,15 +22,17 @@ export function Skills() {
   return (
     <Section id="skills">
       <Container>
-        <Heading eyebrow={t("eyebrow")}>{t("title")}</Heading>
-        <div className="flex max-w-3xl flex-col gap-8">
-          {grouped.map(({ level, items }) => (
-            <Reveal key={level}>
-              <SkillGroup level={level} label={t(`groups.${level}`)}>
-                {items.map((skill) => skill.name)}
-              </SkillGroup>
-            </Reveal>
-          ))}
+        <div className={sceneCopyClass}>
+          <Heading eyebrow={t("eyebrow")}>{t("title")}</Heading>
+          <div className="flex flex-col gap-8">
+            {grouped.map(({ level, items }) => (
+              <Reveal key={level}>
+                <SkillGroup level={level} label={t(`groups.${level}`)}>
+                  {items.map((skill) => skill.name)}
+                </SkillGroup>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </Container>
     </Section>

@@ -13,5 +13,6 @@ export const experience: ExperienceEntry[] = [
   {
     id: "maxopen",
     company: "Maxopen",
+    period: { start: "2023", end: "2023" },
   },
 ];

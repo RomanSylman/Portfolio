@@ -1,10 +1,13 @@
 import { useTranslations } from "next-intl";
 
-import { ProjectCard, projects } from "@/entities/project";
+import { projects } from "@/entities/project";
 import { Container } from "@/shared/ui/container";
 import { Heading } from "@/shared/ui/heading";
 import { Reveal } from "@/shared/ui/reveal";
 import { Section } from "@/shared/ui/section";
+
+import { sceneCopyClass } from "../lib/scene-copy";
+import { ProjectCardLink } from "./project-card-link";
 
 export function Projects() {
   const t = useTranslations("projects");
@@ -12,11 +15,13 @@ export function Projects() {
   return (
     <Section id="projects">
       <Container>
-        <Heading eyebrow={t("eyebrow")}>{t("title")}</Heading>
+        <Heading className={sceneCopyClass} eyebrow={t("eyebrow")}>
+          {t("title")}
+        </Heading>
         <div className="grid gap-8 md:grid-cols-2">
           {projects.map((project) => (
             <Reveal key={project.slug}>
-              <ProjectCard project={project} />
+              <ProjectCardLink project={project} />
             </Reveal>
           ))}
         </div>

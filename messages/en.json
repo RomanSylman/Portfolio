@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Roman Sylman — Frontend Engineer",
-    "description": "Frontend engineer: real-time interfaces, interactive maps and large GPS datasets. Case studies, stack and a scroll-driven 3D scene."
+    "description": "Frontend engineer in fleet telematics: real-time interfaces, interactive maps and large GPS datasets. Case studies, stack and a scroll-driven 3D scene."
   },
   "nav": {
     "hero": "Home",
@@ -14,7 +14,7 @@
   "hero": {
     "eyebrow": "Frontend Engineer",
     "title": "Roman Sylman",
-    "subtitle": "Three years of commercial experience on a complex fleet telematics SPA: real-time interfaces, interactive maps and large GPS datasets, built with Vue 3 and TypeScript.",
+    "subtitle": "3+ years of commercial experience. Currently in fleet telematics: real-time monitoring, interactive maps and large GPS datasets with Vue 3 and TypeScript.",
     "ctaContact": "Get in touch",
     "ctaCv": "Download CV"
   },
@@ -22,9 +22,9 @@
     "eyebrow": "About",
     "title": "A bit about me",
     "paragraphs": [
-      "Frontend engineer with three years of commercial experience. I work on complex, data-heavy SPAs: real-time interfaces, interactive maps and visualization of large datasets.",
-      "I own a feature from implementation through production: architecture, performance and production issues. I do code review, mentor, and maintain CI/CD.",
-      "My main stack is Vue 3 and TypeScript. I also work with React and Next.js."
+      "Frontend engineer with 3+ years of commercial experience. Before that I built outsourced projects for different clients, and now I work on a fleet telematics product.",
+      "I work together with backend, design and DevOps: we align API contracts, take features to release and investigate production issues.",
+      "My main stack is Vue 3 and TypeScript; I also work with React and Next.js."
     ]
   },
   "skills": {
@@ -44,22 +44,22 @@
       "antenor": {
         "role": "Frontend Engineer",
         "highlights": [
-          "Own complex frontend features from implementation through production.",
+          "Own the product frontend: architecture, features and production releases.",
+          "SPA redesign: new UI and UX, updated module structure while keeping the core architecture.",
           "Build real-time monitoring interfaces with REST APIs and WebSockets.",
-          "Develop interactive maps with OpenLayers and deck.gl for large point sets.",
-          "Build map tools for areas.",
-          "Led frontend architecture and UI decisions during a redesign.",
-          "Profile and optimize the SPA, and investigate production issues.",
-          "Review code and help the team with frontend decisions.",
+          "Develop interactive maps with OpenLayers and deck.gl for large GPS point sets.",
+          "Built geofencing tools: creating and editing zones on the map.",
+          "Align API contracts with the backend team.",
+          "Run code reviews and onboarding, and maintain internal frontend documentation.",
+          "Moved business logic into a tested domain layer with build-enforced boundaries.",
+          "Fixed GPU memory and map performance issues in long sessions.",
           "Maintain CI/CD across development, staging and production."
         ]
       },
       "maxopen": {
         "role": "Frontend Engineer",
         "highlights": [
-          "Outsourced development for different clients.",
-          "Landing pages, SPAs and CRM systems.",
-          "Projects in iGaming and crypto."
+          "Outsourced development for iGaming and crypto clients: landing pages, SPAs and CRM systems."
         ]
       }
     }
@@ -71,7 +71,7 @@
     "items": {
       "fleet-telematics": {
         "title": "Fleet Telematics SPA",
-        "summary": "A large SPA with maps, live data and large point sets.",
+        "summary": "Real-time monitoring of thousands of objects: a WebGL layer over the map and domain logic kept outside the UI.",
         "period": "2023 — present"
       },
       "portfolio": {
@@ -84,7 +84,7 @@
   "contact": {
     "eyebrow": "Contact",
     "title": "Let's talk",
-    "body": "Open to product teams. The fastest way to reach me is Telegram or email.",
+    "body": "Open to product teams, remote. English — B1–B2. The fastest way to reach me is Telegram or email.",
     "ctaCv": "Download CV"
   },
   "case": {

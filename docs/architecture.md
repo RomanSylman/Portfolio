@@ -28,7 +28,7 @@ Imports only ever point downwards. Each slice exposes a public API through its
 | `app`      | `src/app`      | Global providers and styles, no business logic              |
 | `pages`    | `src/pages`    | One slice per route, composing widgets into a screen        |
 | `widgets`  | `src/widgets`  | Self-contained page blocks, here the whole home composition |
-| `features` | `src/features` | User interactions, here downloading the CV                  |
+| `features` | `src/features` | User interactions: downloading the CV, opening a project    |
 | `entities` | `src/entities` | Business data: `profile` and `project`                      |
 | `shared`   | `src/shared`   | Reusable UI, libraries, configuration and i18n              |
 
@@ -36,7 +36,9 @@ The home page sections (hero, about, skills, experience, projects, contact,
 header and the scroll scene) live together in the `home` widget rather than as
 separate widgets. FSD treats a slice that has only one consumer as a candidate
 for merging, and Steiger enforces that, so sections that exist only for the
-home page stay inside it.
+home page stay inside it. `open-project` is the exception: it is a user
+action, and the project card must not know about the transition, so the slice
+stays even with a single caller.
 
 ## Routing and i18n
 
@@ -115,6 +117,32 @@ the user prefers reduced motion.
 The pointer store works the same way: `WebGLRoot` writes normalized pointer
 coordinates, and the shader repels particles around the projected cursor
 position.
+
+## Opening a project
+
+Clicking a project card does not navigate immediately. `useOpenProject` passes
+the card element to `playPageTransition`. That function lives in
+`shared/lib/page-transition` and knows nothing about projects: it stores the
+card rectangle and drives one GSAP timeline of about 1.5s. Particles leave the
+current shape together, then spiral clockwise toward a wide rounded loop
+around the card. The loop bends through the corners in that same direction, so
+the stream does not reverse or break. The approach stays loose, and the page
+covers the screen before the whirl can settle into a line.
+While that happens, every sibling around the card fades out, so the header,
+the other sections and the neighbouring card disappear, and the clicked card
+stays. Elements marked `data-transition-keep` (the canvas, the overlay and
+the cursor) are left alone. The card image's WebGL plane hides for the same
+stretch, otherwise a faded neighbour would show the distortion mesh through
+the shared canvas. Near the end, `overlay` covers the screen with the page
+background and only then does `router.push` open the case.
+
+On the next pathname the overlay fades out and `endPageTransition` clears the
+inline opacities and the store. Going back from a case has no animation.
+
+The animation is skipped, and the link behaves normally, when the user prefers
+reduced motion, when WebGL is off, or when the click asks for a new tab
+(Ctrl, Cmd, Shift, Alt, or the middle button). A second click while a
+transition is already running is ignored.
 
 ## Case studies
 

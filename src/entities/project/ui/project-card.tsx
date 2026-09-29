@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { type MouseEventHandler } from "react";
 
 import { Link } from "@/shared/i18n";
 import { DistortionImage } from "@/shared/ui/distortion-image";
@@ -7,21 +8,23 @@ import type { Project } from "../model/types";
 
 interface ProjectCardProps {
   project: Project;
+  onOpen?: MouseEventHandler<HTMLAnchorElement>;
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, onOpen }: ProjectCardProps) {
   const t = useTranslations("projects");
   const title = t(`items.${project.slug}.title`);
 
   return (
     <Link
       href={`/projects/${project.slug}`}
+      onClick={onOpen}
       className="group border-line hover:border-accent focus-visible:outline-accent flex flex-col overflow-hidden rounded-2xl border transition-colors focus-visible:outline-2 focus-visible:outline-offset-2"
     >
       <div className="relative aspect-[16/10] overflow-hidden">
         <DistortionImage src={project.image} alt={title} />
       </div>
-      <div className="bg-surface/60 flex flex-1 flex-col gap-3 p-6">
+      <div className="bg-surface flex flex-1 flex-col gap-3 p-6">
         <div className="flex items-baseline justify-between gap-4">
           <h3 className="text-foreground text-lg font-semibold">{title}</h3>
           <span className="text-muted shrink-0 text-sm">

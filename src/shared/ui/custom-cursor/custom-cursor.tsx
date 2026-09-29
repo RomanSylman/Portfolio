@@ -53,6 +53,7 @@ export function CustomCursor() {
   return (
     <div
       ref={cursor}
+      data-transition-keep
       className="pointer-events-none fixed top-0 left-0 z-50 mix-blend-difference"
       aria-hidden
     >

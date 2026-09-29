@@ -7,6 +7,13 @@ All notable changes to this project are documented here. The format follows
 
 ### Added
 
+- Opening a project sends the background particles out from the current shape,
+  then carries them in one clockwise vortex around the card. The path is rounded
+  through the corners and stays loose, so the stream does not reverse, leave
+  gaps, or settle into a dense line before the page covers. The rest of the page
+  fades, the card stays, and a background cover appears only at the end. The
+  animation is skipped for reduced motion, without WebGL, and for modified
+  clicks.
 - Next.js 16 application scaffold with the App Router, TypeScript in strict
   mode, Tailwind CSS v4 and pnpm.
 - Code quality tooling: ESLint flat config with `typescript-eslint` strict

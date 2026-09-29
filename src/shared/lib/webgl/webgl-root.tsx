@@ -21,34 +21,37 @@ export function WebGLRoot() {
   );
 
   return (
-    <Canvas
-      className="pointer-events-none"
-      style={{
-        position: "fixed",
-        inset: 0,
-        width: "100vw",
-        height: "100vh",
-        zIndex: 0,
-        pointerEvents: "none",
-      }}
-      eventSource={typeof document !== "undefined" ? document.body : undefined}
-      dpr={dpr}
-      gl={{
-        antialias: false,
-        alpha: true,
-        powerPreference: "high-performance",
-      }}
-      camera={{ position: [0, 0, 6], fov: 45 }}
-    >
-      <View.Port />
-      <PerformanceMonitor
-        onDecline={() => {
-          setDpr(MOBILE_DPR);
+    <div data-transition-keep className="pointer-events-none fixed inset-0 z-0">
+      <Canvas
+        className="pointer-events-none"
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          pointerEvents: "none",
         }}
-        onIncline={() => {
-          setDpr(isMobileViewport() ? MOBILE_DPR : DESKTOP_DPR);
+        eventSource={
+          typeof document !== "undefined" ? document.body : undefined
+        }
+        dpr={dpr}
+        gl={{
+          antialias: false,
+          alpha: true,
+          powerPreference: "high-performance",
         }}
-      />
-    </Canvas>
+        camera={{ position: [0, 0, 6], fov: 45 }}
+      >
+        <View.Port />
+        <PerformanceMonitor
+          onDecline={() => {
+            setDpr(MOBILE_DPR);
+          }}
+          onIncline={() => {
+            setDpr(isMobileViewport() ? MOBILE_DPR : DESKTOP_DPR);
+          }}
+        />
+      </Canvas>
+    </div>
   );
 }

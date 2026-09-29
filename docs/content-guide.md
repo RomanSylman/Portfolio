@@ -9,7 +9,9 @@ message files.
 
 `src/entities/profile/model/experience.ts` lists timeline entries as
 `{ id, company, period? }`. `period` is `{ start, end }` and is omitted when the
-dates are not shown. The role and the highlight list come from
+dates are not shown. `end` is `null` for a current role. When `start` and `end`
+are the same year, the timeline shows that year once. The role and the highlight
+list come from
 `experience.items.<id>` in the messages. An empty highlight list is not rendered.
 
 `src/entities/profile/model/skills.ts` groups skills by `daily`, `confident` and

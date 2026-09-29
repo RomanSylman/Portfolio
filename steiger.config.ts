@@ -22,4 +22,15 @@ export default defineConfig([
       "fsd/forbidden-imports": "error",
     },
   },
+  {
+    /**
+     * Opening a project is a user action. It stays a feature so the project
+     * card never learns about the transition, even though only the home
+     * widget calls it today.
+     */
+    files: ["./src/features/open-project/**"],
+    rules: {
+      "fsd/insignificant-slice": "off",
+    },
+  },
 ]);

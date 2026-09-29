@@ -74,7 +74,7 @@ export async function ProjectCasePage({ slug, locale }: ProjectCasePageProps) {
             </div>
           </header>
 
-          <div className="prose-case text-muted [&_h2]:text-foreground mt-12 flex flex-col gap-4 [&_h2]:mt-10 [&_h2]:mb-3 [&_h2]:text-2xl [&_h2]:font-semibold [&_li]:ml-5 [&_li]:list-disc [&_li]:leading-relaxed [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-2">
+          <div className="prose-case text-muted [&_h2]:text-foreground [&_strong]:text-foreground mt-12 flex flex-col gap-4 [&_h2]:mt-10 [&_h2]:mb-3 [&_h2]:text-2xl [&_h2]:font-semibold [&_li]:ml-5 [&_li]:list-disc [&_li]:leading-relaxed [&_strong]:font-semibold [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-2">
             <Content />
           </div>
 

@@ -3,9 +3,10 @@
 import { useTexture } from "@react-three/drei";
 import { type ThreeEvent, useFrame, useThree } from "@react-three/fiber";
 import { useMemo, useRef, useState } from "react";
-import { type ShaderMaterial, Vector2 } from "three";
+import { type Mesh, type ShaderMaterial, Vector2 } from "three";
 
 import { damp } from "@/shared/lib/damp";
+import { usePageTransitionStore } from "@/shared/lib/page-transition";
 
 import fragmentShader from "./shaders/distortion.frag";
 import vertexShader from "./shaders/distortion.vert";
@@ -29,6 +30,7 @@ export function DistortionPlane({ src }: DistortionPlaneProps) {
   const pointer = useRef(new Vector2(0.5, 0.5));
   const hover = useRef({ value: 0 });
   const materialRef = useRef<ShaderMaterial>(null);
+  const meshRef = useRef<Mesh>(null);
 
   const image = texture.image as { width?: number; height?: number };
   const imageAspect =
@@ -48,6 +50,11 @@ export function DistortionPlane({ src }: DistortionPlaneProps) {
   );
 
   useFrame(({ clock }, delta) => {
+    if (meshRef.current) {
+      meshRef.current.visible =
+        usePageTransitionStore.getState().progress === 0;
+    }
+
     damp(hover.current, "value", hovered ? 1 : 0, 0.2, delta);
 
     const live = materialRef.current?.uniforms;
@@ -73,6 +80,7 @@ export function DistortionPlane({ src }: DistortionPlaneProps) {
 
   return (
     <mesh
+      ref={meshRef}
       onPointerOver={() => {
         setHovered(true);
       }}

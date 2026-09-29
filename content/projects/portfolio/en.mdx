@@ -5,26 +5,24 @@ export const metadata = {
   period: "2026",
 };
 
-This site. The source link will appear only after the repository is on GitHub.
-
 ## The problem
 
-The public page had to show interface and 3D work, not a list of technologies. The copy had to stay limited to facts from experience, with no invented metrics.
+The public page had to show interface and 3D work, not a list of technologies.
 
 ## My role
 
-I built the site myself: architecture, scene, both languages, case studies and the quality checks.
+Designed and built the site: architecture, scene, both languages, case studies and the quality checks.
 
 ## Key decisions
 
 - Next.js 16 with the App Router. Ukrainian and English pages are statically generated with next-intl, and the locale is always in the URL.
 - One WebGL context. The background and the card images are separate `drei` `View`s, not extra canvases.
-- Particles morph between shapes on the GPU from the scroll stage. Scrolling is Lenis, tied to GSAP ScrollTrigger.
-- Glow lives in the particle shader. Bloom postprocessing is not used: it fits poorly with the scissor rendering of `View`.
+- Particles flow between shapes on the GPU from the scroll stage. Scrolling is Lenis, tied to GSAP ScrollTrigger.
+- Glow lives in the particle shader. Bloom postprocessing is not used: it conflicts with the scissor rendering of `View`.
 - The structure is Feature-Sliced Design, and Steiger checks the layer boundaries. Decisions are recorded as ADRs.
 - Case studies are MDX read on the server with `@mdx-js/mdx`, without the RSC context of `@mdx-js/react`.
 
 ## The result
 
 - The site builds statically for both languages and for the case study pages.
-- CI runs the full check, the production build and Lighthouse CI with thresholds. I am not quoting measured scores here: a threshold in config is a requirement, not a report of a run.
+- CI runs the full check, the production build and Lighthouse CI with thresholds.

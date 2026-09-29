@@ -1,28 +1,37 @@
 export const metadata = {
   title: "Fleet Telematics SPA",
   role: "Frontend Engineer",
-  stack: ["Vue 3", "TypeScript", "OpenLayers", "deck.gl", "WebSockets"],
+  stack: [
+    "Vue 3",
+    "TypeScript",
+    "Pinia",
+    "OpenLayers",
+    "deck.gl",
+    "WebSockets",
+  ],
   period: "2023 — present",
 };
 
-A public description of a large SPA with a map and live data, without the product interface.
+The product is under NDA, so there is no client name and no screenshots.
 
 ## The problem
 
-A complex SPA with a lot of data, updated in real time.
+Real-time vehicle monitoring. Thousands of objects move on the map at once, and data arrives as a continuous stream. Users keep the interface open for long sessions, so it has to stay fast, and the map, the list and the object card have to show a consistent state.
 
 ## My role
 
-Frontend Engineer. I take features from implementation through production.
+I own the client side of the product — from architecture through releases — working with backend, design and DevOps. A major piece of that work was a full redesign; the codebase is over 200k lines of TypeScript and Vue.
 
-## What it covers
+## Key decisions
 
-- Real-time monitoring with REST and WebSockets.
-- Maps and large point sets with OpenLayers and deck.gl.
-- Map tools.
-- Architecture and a redesign: Vue 3, TypeScript, Pinia, Tailwind CSS, Vite.
-- Quality and delivery: profiling, code review and CI/CD.
+- **Product rules live outside the UI.** Object state calculations sit in a domain layer with no framework and no network, so tests cover them without rendering a page. Server requests go through a single facade. The build enforces layer boundaries: components don't import infrastructure, the domain doesn't import the framework. The list, the map and the card read the same calculation and never drift apart.
+- **The map and the moving-objects layer are separate engines.** The base map, camera and interaction stay on the mapping library, while moving objects are drawn by a separate WebGL layer sharing the same camera. The heavy layer never redraws tiles, and the map doesn't hold every object as its own feature. Clusters, icons and picking are handled in that layer, not in the DOM.
+- **One icon atlas instead of a texture per marker.** Unique icons piled up in GPU memory and were never released: in long sessions markers disappeared or rendered with artifacts. The layer now takes icons by key from a prebuilt atlas, together with clusters and badges.
+- **A background tab doesn't build up queues.** Browsers barely give frames to a hidden tab. Visual updates stay on the animation frame and simply pause in the background, while data processing runs on a separate timer. When the user comes back, the UI doesn't try to catch up all at once.
+- **List animations run only in the visible area.** The virtual scroller's pool is wider than the viewport, and off-screen animations were still computed. The list now has three zones: visible items animate, items near the edge are prepared and paused on the first frame, and the rest are replaced by a static icon. Row height stays the same, so scrolling doesn't jump.
 
 ## The result
 
-- It runs in production.
+- The map stays stable with a large fleet.
+- Coming back to the tab, the interface doesn't catch up on a queue of updates.
+- List scrolling doesn't jump, and animations don't run for hidden rows.

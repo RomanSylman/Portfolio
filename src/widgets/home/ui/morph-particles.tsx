@@ -2,9 +2,16 @@
 
 import { useFrame } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
-import { AdditiveBlending, Color, type ShaderMaterial, Vector3 } from "three";
+import {
+  AdditiveBlending,
+  Color,
+  type ShaderMaterial,
+  Vector3,
+  Vector4,
+} from "three";
 
 import { damp } from "@/shared/lib/damp";
+import { usePageTransitionStore } from "@/shared/lib/page-transition";
 import { useScrollStore } from "@/shared/lib/scroll";
 import { usePointerStore } from "@/shared/lib/webgl";
 
@@ -34,6 +41,8 @@ export function MorphParticles() {
     () => ({
       uStage: { value: 0 },
       uIntro: { value: 0 },
+      uGather: { value: 0 },
+      uGatherRect: { value: new Vector4() },
       uMouse: { value: new Vector3() },
       uRepelStrength: { value: 0.85 },
       uTime: { value: 0 },
@@ -64,6 +73,8 @@ export function MorphParticles() {
 
     const stage = live.uStage;
     const intro = live.uIntro;
+    const gather = live.uGather;
+    const gatherRect = live.uGatherRect;
     const time = live.uTime;
     const mouse = live.uMouse;
     const color = live.uColor;
@@ -72,6 +83,8 @@ export function MorphParticles() {
     if (
       !stage ||
       !intro ||
+      !gather ||
+      !gatherRect ||
       !time ||
       !mouse ||
       !color ||
@@ -83,6 +96,20 @@ export function MorphParticles() {
 
     stage.value = state.stage;
     intro.value = useIntroStore.getState().progress;
+
+    const transition = usePageTransitionStore.getState();
+    gather.value = transition.progress;
+    const rect = transition.rect;
+    if (rect && size.width > 0 && size.height > 0) {
+      const centerX = rect.x + rect.width / 2;
+      const centerY = rect.y + rect.height / 2;
+      (gatherRect.value as Vector4).set(
+        (centerX / size.width - 0.5) * viewWidth,
+        (0.5 - centerY / size.height) * viewHeight,
+        ((rect.width / size.width) * viewWidth) / 2,
+        ((rect.height / size.height) * viewHeight) / 2,
+      );
+    }
     time.value = clock.elapsedTime;
     const desktop = size.width >= DESKTOP_BREAKPOINT;
     pixelRatio.value = gl.getPixelRatio();
