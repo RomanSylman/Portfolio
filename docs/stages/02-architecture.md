@@ -11,7 +11,7 @@ feature code.
   directory so Next.js does not treat `src/pages` as the Pages Router.
 - Added Steiger with the FSD plugin and scoped its import rules to `src/`.
 - Set up next-intl with `uk` and `en`, message catalogs, locale-aware navigation
-  helpers and the middleware in `src/proxy.ts`.
+  helpers and the middleware in `proxy.ts`.
 - Made `app/[locale]/layout.tsx` the root layout so the locale is available
   through `next/root-params` and pages render statically.
 

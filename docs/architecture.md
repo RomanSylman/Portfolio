@@ -48,7 +48,7 @@ above the root layout, `next/root-params` exposes it everywhere, which is what
 lets `src/shared/i18n/request.ts` resolve the locale during static rendering
 without reading request headers.
 
-`src/proxy.ts` runs the next-intl middleware that redirects `/` to the default
+`proxy.ts` runs the next-intl middleware that redirects `/` to the default
 locale and negotiates the locale. See
 [ADR 0005](adr/0005-next-intl-i18n.md).
 
