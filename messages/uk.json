@@ -1,0 +1,102 @@
+{
+  "metadata": {
+    "title": "Roman Sylman — Frontend Engineer",
+    "description": "Frontend-інженер: real-time інтерфейси, інтерактивні карти і великі GPS-датасети. Кейси, стек і scroll-driven 3D-сцена."
+  },
+  "nav": {
+    "hero": "Головна",
+    "about": "Про мене",
+    "skills": "Навички",
+    "experience": "Досвід",
+    "projects": "Проєкти",
+    "contact": "Контакти"
+  },
+  "hero": {
+    "eyebrow": "Frontend Engineer",
+    "title": "Roman Sylman",
+    "subtitle": "3 роки комерційного досвіду в складному SPA для fleet telematics: real-time інтерфейси, інтерактивні карти й великі GPS-датасети на Vue 3 і TypeScript.",
+    "ctaContact": "Написати",
+    "ctaCv": "Завантажити CV"
+  },
+  "about": {
+    "eyebrow": "Про мене",
+    "title": "Кілька слів",
+    "paragraphs": [
+      "Frontend-інженер із трьома роками комерційного досвіду. Працюю зі складними SPA, де багато даних: інтерфейси реального часу, інтерактивні карти й візуалізація великих наборів даних.",
+      "Відповідаю за фічу повністю, від реалізації до продакшену: архітектура, продуктивність, розбір продакшен-проблем. Роблю код-рев'ю, займаюсь менторством і підтримую CI/CD.",
+      "Основний стек — Vue 3 і TypeScript. Також працюю з React і Next.js."
+    ]
+  },
+  "skills": {
+    "eyebrow": "Навички",
+    "title": "З чим працюю",
+    "groups": {
+      "daily": "Щодня",
+      "confident": "Впевнено",
+      "familiar": "Знайомий"
+    }
+  },
+  "experience": {
+    "eyebrow": "Досвід",
+    "title": "Досвід",
+    "present": "дотепер",
+    "items": {
+      "antenor": {
+        "role": "Frontend Engineer",
+        "highlights": [
+          "Веду складні frontend-фічі від реалізації до продакшену.",
+          "Будую інтерфейси моніторингу в реальному часі на REST і WebSockets.",
+          "Роблю інтерактивні карти на OpenLayers і deck.gl для великих наборів точок.",
+          "Роблю інструменти зон на карті.",
+          "Вів frontend-архітектуру та UI-рішення під час редизайну.",
+          "Профілюю й оптимізую SPA, розбираю продакшен-проблеми.",
+          "Роблю код-рев'ю і допомагаю команді з frontend-рішеннями.",
+          "Підтримую CI/CD для development, staging і production."
+        ]
+      },
+      "maxopen": {
+        "role": "Frontend Engineer",
+        "highlights": [
+          "Аутсорс-розробка для різних клієнтів.",
+          "Лендінги, SPA і CRM-системи.",
+          "Проєкти в iGaming і crypto."
+        ]
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "Проєкти",
+    "title": "Обрані роботи",
+    "viewCase": "Читати кейс",
+    "items": {
+      "fleet-telematics": {
+        "title": "Fleet Telematics SPA",
+        "summary": "Велике SPA з картами, живими даними і великими наборами точок.",
+        "period": "2023 — дотепер"
+      },
+      "portfolio": {
+        "title": "Портфоліо",
+        "summary": "Цей сайт: scroll-driven сцена на частинках, двомовні кейси і статична збірка.",
+        "period": "2026"
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Контакти",
+    "title": "На зв'язку",
+    "body": "Відкритий до продуктових команд. Найшвидше відповідаю в Telegram і на пошту.",
+    "ctaCv": "Завантажити CV"
+  },
+  "case": {
+    "back": "До проєктів",
+    "role": "Роль",
+    "stack": "Стек",
+    "period": "Період",
+    "demo": "Живе демо",
+    "source": "Код",
+    "downloadCv": "Завантажити CV"
+  },
+  "locale": {
+    "switchTo": "Змінити мову"
+  }
+}

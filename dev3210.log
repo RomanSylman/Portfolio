@@ -1,0 +1,37 @@
+▲ Next.js 16.3.6 (Turbopack)
+- Local:         http://localhost:3210
+- Network:       http://192.168.0.155:3210
+✓ Ready in 324ms
+✓ Running next.config.ts took 43ms
+
+ GET / 404 in 728ms (next.js: 631ms, application-code: 96ms)
+ GET /projects 404 in 1405ms (next.js: 977ms, generate-params: 302ms, application-code: 126ms)
+ GET /uk 200 in 93ms (next.js: 4ms, generate-params: 4ms, application-code: 85ms)
+ GET /en/projects/lumen-docs 200 in 848ms (next.js: 436ms, generate-params: 325ms, application-code: 87ms)
+ GET /fr 404 in 38ms (next.js: 3ms, generate-params: 4ms, application-code: 31ms)
+✓ Compiled in 46ms
+ GET / 404 in 24ms (next.js: 6ms, application-code: 18ms)
+✓ Compiled in 22ms
+ GET /uk 200 in 47ms (next.js: 4ms, generate-params: 4ms, application-code: 39ms)
+ GET /en 200 in 40ms (next.js: 3ms, generate-params: 0.0ms, application-code: 37ms)
+ GET /uk 200 in 40ms (next.js: 3ms, generate-params: 0.0ms, application-code: 36ms)
+ GET /uk 200 in 50ms (next.js: 3ms, generate-params: 4ms, application-code: 42ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+ GET /uk 200 in 45ms (next.js: 3ms, generate-params: 4ms, application-code: 37ms)
+⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+▲ Next.js 16.3.6 (Turbopack)
+- Local:         http://localhost:3210
+- Network:       http://192.168.0.155:3210
+✓ Ready in 268ms
+✓ Running next.config.ts took 41ms
+
+ GET /uk 200 in 771ms (next.js: 152ms, generate-params: 299ms, application-code: 321ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+ GET /uk 200 in 55ms (next.js: 5ms, generate-params: 5ms, application-code: 45ms)
+ GET /favicon.ico 404 in 48ms (next.js: 4ms, generate-params: 0.0ms, application-code: 44ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[browser] ObjectMultiplex - orphaned data for stream "metamask-multichain-provider" (moz-extension://1ff99d54-08ec-49a1-9066-d362269651f5/scripts/inpage.js;:1:28380)
+[browser] ObjectMultiplex - orphaned data for stream "metamask-multichain-provider" (moz-extension://1ff99d54-08ec-49a1-9066-d362269651f5/scripts/inpage.js;:1:28380)
+[browser] ObjectMultiplex - orphaned data for stream "metamask-multichain-provider" (moz-extension://1ff99d54-08ec-49a1-9066-d362269651f5/scripts/inpage.js;:1:28380)
+[browser] ObjectMultiplex - orphaned data for stream "metamask-multichain-provider" (moz-extension://1ff99d54-08ec-49a1-9066-d362269651f5/scripts/inpage.js;:1:28380)
+[?25h

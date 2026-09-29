@@ -1,0 +1,102 @@
+{
+  "metadata": {
+    "title": "Roman Sylman — Frontend Engineer",
+    "description": "Frontend engineer: real-time interfaces, interactive maps and large GPS datasets. Case studies, stack and a scroll-driven 3D scene."
+  },
+  "nav": {
+    "hero": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "Frontend Engineer",
+    "title": "Roman Sylman",
+    "subtitle": "Three years of commercial experience on a complex fleet telematics SPA: real-time interfaces, interactive maps and large GPS datasets, built with Vue 3 and TypeScript.",
+    "ctaContact": "Get in touch",
+    "ctaCv": "Download CV"
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "A bit about me",
+    "paragraphs": [
+      "Frontend engineer with three years of commercial experience. I work on complex, data-heavy SPAs: real-time interfaces, interactive maps and visualization of large datasets.",
+      "I own a feature from implementation through production: architecture, performance and production issues. I do code review, mentor, and maintain CI/CD.",
+      "My main stack is Vue 3 and TypeScript. I also work with React and Next.js."
+    ]
+  },
+  "skills": {
+    "eyebrow": "Skills",
+    "title": "What I work with",
+    "groups": {
+      "daily": "Daily",
+      "confident": "Confident",
+      "familiar": "Familiar"
+    }
+  },
+  "experience": {
+    "eyebrow": "Experience",
+    "title": "Experience",
+    "present": "present",
+    "items": {
+      "antenor": {
+        "role": "Frontend Engineer",
+        "highlights": [
+          "Own complex frontend features from implementation through production.",
+          "Build real-time monitoring interfaces with REST APIs and WebSockets.",
+          "Develop interactive maps with OpenLayers and deck.gl for large point sets.",
+          "Build map tools for areas.",
+          "Led frontend architecture and UI decisions during a redesign.",
+          "Profile and optimize the SPA, and investigate production issues.",
+          "Review code and help the team with frontend decisions.",
+          "Maintain CI/CD across development, staging and production."
+        ]
+      },
+      "maxopen": {
+        "role": "Frontend Engineer",
+        "highlights": [
+          "Outsourced development for different clients.",
+          "Landing pages, SPAs and CRM systems.",
+          "Projects in iGaming and crypto."
+        ]
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "Projects",
+    "title": "Selected work",
+    "viewCase": "Read case study",
+    "items": {
+      "fleet-telematics": {
+        "title": "Fleet Telematics SPA",
+        "summary": "A large SPA with maps, live data and large point sets.",
+        "period": "2023 — present"
+      },
+      "portfolio": {
+        "title": "Portfolio",
+        "summary": "This site: a scroll-driven particle scene, bilingual case studies and a static build.",
+        "period": "2026"
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk",
+    "body": "Open to product teams. The fastest way to reach me is Telegram or email.",
+    "ctaCv": "Download CV"
+  },
+  "case": {
+    "back": "Back to projects",
+    "role": "Role",
+    "stack": "Stack",
+    "period": "Period",
+    "demo": "Live demo",
+    "source": "Source code",
+    "downloadCv": "Download CV"
+  },
+  "locale": {
+    "switchTo": "Switch language"
+  }
+}

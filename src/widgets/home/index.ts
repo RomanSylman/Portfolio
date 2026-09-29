@@ -1,0 +1,9 @@
+export { About } from "./ui/about";
+export { Contact } from "./ui/contact";
+export { Experience } from "./ui/experience";
+export { Hero } from "./ui/hero";
+export { MorphParticles } from "./ui/morph-particles";
+export { Projects } from "./ui/projects";
+export { ScrollScene } from "./ui/scroll-scene";
+export { SiteHeader } from "./ui/site-header";
+export { Skills } from "./ui/skills";
