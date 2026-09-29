@@ -26,7 +26,7 @@ export function Hero() {
           <RevealText
             as="h1"
             trigger="intro"
-            className="text-foreground text-5xl font-semibold tracking-tight sm:text-6xl"
+            className="text-foreground text-[clamp(1.75rem,calc(100cqi*0.14),3rem)] leading-none font-semibold tracking-tight whitespace-nowrap sm:text-6xl"
           >
             {t("title")}
           </RevealText>
